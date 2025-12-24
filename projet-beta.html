@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJET | Case Study</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&family=Raleway:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="project-page">
+
+    <header class="navbar">
+        <div class="nav-container glass">
+            <a href="index.html" class="nav-brand">
+                <img src="logo_blackbuur.png" alt="Blackbuur" class="nav-logo">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">← Retour</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="project-hero">
+            <div class="container project-hero-container">
+                <div class="project-header reveal-text">
+                    <span class="mono-label" id="project-category">CATÉGORIE / 2024</span>
+                    <h1 id="project-title" class="project-display-title">NOM DU PROJET</h1>
+                </div>
+                <div class="project-hero-img glass reveal-image">
+                    <div class="placeholder-img-full b-w-filter"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section project-details">
+            <div class="container grid-layout">
+                <div class="grid-col-left">
+                    <div class="detail-meta mono reveal-up">
+                        <div class="meta-item">
+                            <span class="label">CLIENT</span>
+                            <span class="value" id="project-client">Concept Blackbuur</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">RÔLE</span>
+                            <span class="value" id="project-role">Lead Designer</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">ANNÉE</span>
+                            <span class="value" id="project-year">2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-col-right editorial-text reveal-up">
+                    <h3>Le Défi</h3>
+                    <p id="project-context">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                    <h3 style="margin-top: 4rem;">La Solution</h3>
+                    <p id="project-solution">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                        qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-gallery">
+            <div class="container gallery-grid">
+                <div class="gallery-item reveal-up glass">
+                    <div class="placeholder-img b-w-filter"></div>
+                </div>
+                <div class="gallery-item reveal-up glass">
+                    <div class="placeholder-img b-w-filter"></div>
+                </div>
+                <div class="gallery-item reveal-up glass">
+                    <div class="placeholder-img b-w-filter"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section project-conclusion">
+            <div class="container narrow reveal-up">
+                <h2 class="mono">/ IMPACT</h2>
+                <p class="conclusion-text" id="project-impact">Ce projet a permis de redéfinir les standards visuels de
+                    la marque, augmentant l'engagement utilisateur de 40% et consolidant une identité digitale
+                    intemporelle.</p>
+                <div class="project-navigation">
+                    <a href="index.html" class="btn btn-secondary">RETOUR AU PORTFOLIO</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="mono">BLACKBUUR // CASE STUDY // END</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Simple router to populate content based on filename
+        const projectName = window.location.pathname.split('/').pop().replace('.html', '').replace('projet-', '');
+        const projectData = {
+            'alpha': { title: 'PROJET ALPHA', cat: 'STRATÉGIE / 2024', context: 'Alpha est une exploration de la structure algorithmique appliquée au branding digital.', solution: 'Nous avons développé un système de grille modulaire qui s\'adapte dynamiquement aux contenus.', impact: 'Une cohérence visuelle accrue sur tous les points de contact.' },
+            'beta': { title: 'PROJET BETA', cat: 'UI/UX / 2024', context: 'Beta redéfinit l\'expérience utilisateur pour les plateformes de haute précision.', solution: 'Interface ultra-minimale axée sur la performance et le focus cognitif.', impact: 'Réduction du temps de complétion des tâches de 35%.' },
+            'gamma': { title: 'PROJET GAMMA', cat: 'BRANDING / 2023', context: 'Gamma est une identité visuelle pour une agence de design futuriste.', solution: 'Utilisation de typographies brutales et de compositions asymétriques.', impact: 'Positionnement premium affirmé dans un marché concurrentiel.' },
+            'delta': { title: 'PROJET DELTA', cat: 'E-COMMERCE / 2023', context: 'Delta transforme le shopping en ligne en une expérience éditoriale fluide.', solution: 'Navigation par gestes et filtrage intelligent pour une exploration sereine.', impact: 'Augmentation du taux de conversion de 22%.' },
+            'epsilon': { title: 'PROJET EPSILON', cat: 'MOBILE APP / 2022', context: 'Epsilon est une application de gestion de workflow pour créatifs.', solution: 'Architecture de l\'information simplifiée et design émotionnel.', impact: 'Note moyenne de 4.8/5 sur les stores applicatifs.' }
+        };
+
+        if (projectData[projectName]) {
+            const data = projectData[projectName];
+            document.getElementById('project-title').textContent = data.title;
+            document.getElementById('project-category').textContent = data.cat;
+            document.getElementById('project-context').textContent = data.context;
+            document.getElementById('project-solution').textContent = data.solution;
+            document.getElementById('project-impact').textContent = data.impact;
+            document.title = `BLACKBUUR | ${data.title}`;
+        }
+    </script>
+</body>
+
+</html>
