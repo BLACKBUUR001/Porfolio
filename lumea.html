@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJET | Case Study</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&family=Raleway:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="project-page">
+
+    <header class="navbar">
+        <div class="nav-container glass">
+            <a href="index.html" class="nav-brand">
+                <img src="logo_blackbuur.png" alt="Blackbuur" class="nav-logo">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">← Retour</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="project-hero">
+            <div class="container project-hero-container">
+                <div class="project-header reveal-text">
+                    <span class="mono-label" id="project-category">CATÉGORIE / 2024</span>
+                    <h1 id="project-title" class="project-display-title">NOM DU PROJET</h1>
+                </div>
+                </div>
+        </section>
+
+        <section class="section project-details" style="padding: 4rem 0;">
+
+            <div class="container grid-layout">
+                <div class="grid-col-left">
+                    <div class="detail-meta mono reveal-up">
+                        <div class="meta-item">
+                            <span class="label">CLIENT</span>
+                            <span class="value" id="project-client">Concept Blackbuur</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">RÔLE</span>
+                            <span class="value" id="project-role">Lead Designer</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">ANNÉE</span>
+                            <span class="value" id="project-year">2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-col-right editorial-text reveal-up">
+                    <h3>Le Défi</h3>
+                    <p id="project-context">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                    <h3 style="margin-top: 4rem;">La Solution</h3>
+                    <p id="project-solution">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                        qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        
+        </section>
+
+        <section class="project-gallery">
+            <div class="container gallery-grid">
+
+                <div class="gallery-item reveal-up">
+                    <img src="LUMEA/BGS LUMEA carré.png" alt="BGS LUMEA carré.png" class="gallery-img">
+                </div>
+                <div class="gallery-item reveal-up">
+                    <img src="LUMEA/Fichier 1.png" alt="Fichier 1.png" class="gallery-img">
+                </div>
+                <div class="gallery-item reveal-up">
+                    <img src="LUMEA/Group 3.png" alt="Group 3.png" class="gallery-img">
+                </div>
+                <div class="gallery-item reveal-up">
+                    <img src="LUMEA/Landing page.png" alt="Landing page.png" class="gallery-img">
+                </div>
+                <div class="gallery-item reveal-up">
+                    <img src="LUMEA/LUMEA Billboard mock.png" alt="LUMEA Billboard mock.png" class="gallery-img">
+                </div>
+                <div class="gallery-item reveal-up">
+                    <img src="LUMEA/LUMEA cdv mock.jpg" alt="LUMEA cdv mock.jpg" class="gallery-img">
+                </div>
+                <div class="gallery-item reveal-up">
+                    <img src="LUMEA/LUMEA post mock.png" alt="LUMEA post mock.png" class="gallery-img">
+                </div>
+                <div class="gallery-item reveal-up">
+                    <img src="LUMEA/LUMEA post.jpg" alt="LUMEA post.jpg" class="gallery-img">
+                </div>
+                <div class="gallery-item reveal-up">
+                    <img src="LUMEA/Macbook-Mockup-on-Rocks-Boho-Interior.png" alt="Macbook-Mockup-on-Rocks-Boho-Interior.png" class="gallery-img">
+                </div>
+            </div>
+        </section>
+
+        <section class="section project-conclusion">
+            <div class="container narrow reveal-up">
+                <h2 class="mono">/ IMPACT</h2>
+                <p class="conclusion-text" id="project-impact">Ce projet a permis de redéfinir les standards visuels de
+                    la marque, augmentant l'engagement utilisateur de 40% et consolidant une identité digitale
+                    intemporelle.</p>
+                <div class="project-navigation">
+                    <a href="index.html" class="btn btn-secondary">RETOUR AU PORTFOLIO</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="mono">BLACKBUUR // CASE STUDY // END</p>
+        </div>
+    </footer>
+
+    
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox">
+        <span id="lightbox-close" class="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Zoomed view">
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        const projectName = window.location.pathname.split('/').pop().replace('.html', '').replace('projet-', '');
+        const projectData = {
+            'kawsara': { title: 'KAWSARA FAAL', cat: 'BRANDING & PACKAGING / 2024', context: 'Kawsara Faal est une marque de café Touba 100% sénégalaise, préparé avec soin selon la tradition. Le défi était de créer une identité visuelle qui reflète l\'authenticité et la qualité du produit tout en se démarquant sur un marché concurrentiel.', solution: 'J\'ai conçu une identité complète : logo distinctif, charte graphique, packaging produit, et une série de visuels pour les réseaux sociaux incluant des campagnes Ramadan et Black Friday.', impact: 'Une identité de marque cohérente qui a renforcé la visibilité de Kawsara Faal sur les réseaux sociaux et dans les points de vente.' },
+            'lumea': { title: 'LUMÉA', cat: 'BRANDING & WEB DESIGN / 2024', context: 'Luméa avait besoin d\'une identité visuelle complète pour se positionner comme une marque premium dans le secteur technologique.', solution: 'J\'ai développé un branding complet incluant la création du logo, les cartes de visite, des mockups billboard grand format, un design de landing page web, ainsi que des visuels pour les réseaux sociaux.', impact: 'Un positionnement haut de gamme affirmé avec une cohérence visuelle totale sur l\'ensemble des supports digitaux et print.' },
+            'murid-pro': { title: 'MURID PRO', cat: 'APPLICATION MOBILE / 2023', context: 'La communauté mouride avait besoin d\'une application mobile moderne pour accéder au Coran, aux Khassidas, aux heures de prière et aux outils de dévotion quotidienne.', solution: 'J\'ai conçu l\'interface complète de Murid Pro : lecteur de Coran, section Khassida, heures de prière, compteur Tasbih digital, et lecteur audio pour les Wirds Makhouz.', impact: 'Une application adoptée massivement par la communauté mouride, offrant un accès simple et élégant aux textes et pratiques religieuses.' },
+            'pad-branding': { title: 'PAD BRANDING', cat: 'IDENTITÉ VISUELLE COMPLÈTE / 2023', context: 'Le Port Autonome de Dakar nécessitait une refonte complète de son identité visuelle pour moderniser son image institutionnelle.', solution: 'Branding intégral : déclinaisons du logo, papeterie complète, signalétique, habillage véhicule, goodies et visuels événementiels.', impact: 'Une identité institutionnelle modernisée et unifiée, déployée sur plus de 30 supports différents.' },
+            'yaraam': { title: 'YAARAM', cat: 'BRANDING & PRÉSENTATION / 2024', context: 'Yaaram avait besoin d\'une identité de marque forte et d\'une présentation professionnelle complète.', solution: 'Branding complet : logo, brand guidelines détaillées, présentation de plus de 15 slides, et une série de mockups professionnels.', impact: 'Une marque structurée et professionnelle avec des outils de communication clés en main.' }
+        };
+
+        if (projectData[projectName]) {
+            const data = projectData[projectName];
+            document.getElementById('project-title').textContent = data.title;
+            document.getElementById('project-category').textContent = data.cat;
+            document.getElementById('project-context').textContent = data.context;
+            document.getElementById('project-solution').textContent = data.solution;
+            document.getElementById('project-impact').textContent = data.impact;
+            document.title = `BLACKBUUR | ${data.title}`;
+        }
+    </script>
+</body>
+
+</html>

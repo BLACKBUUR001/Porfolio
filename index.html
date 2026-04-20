@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACKBUUR — Cheikh Ahmadou Fall · Creative Designer</title>
+    <meta name="description"
+        content="Portfolio de Cheikh Ahmadou Fall (BLACKBUUR) — Creative Designer & Stratège Digital. Branding, identité visuelle, packaging, UI/UX.">
+
+    <link rel="icon" type="image/png" href="logo_blackbuur.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Raleway:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="visual-noise"></div>
+    <div class="dynamic-background">
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+    <div id="tech-canvas-bg"></div>
+    <div id="mouse-glow"></div>
+
+    <!-- NAV -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#accueil" class="nav-brand">
+                <img src="logo_blackbuur.png" alt="Blackbuur" class="nav-logo">
+            </a>
+            <nav class="nav-links">
+                <a href="#accueil" class="nav-link active"><span class="mono">01</span> Accueil</a>
+                <a href="#profil" class="nav-link"><span class="mono">02</span> Profil</a>
+                <a href="#services" class="nav-link"><span class="mono">03</span> Services</a>
+                <a href="#projets" class="nav-link"><span class="mono">04</span> Projets</a>
+                <a href="#contact" class="nav-link"><span class="mono">05</span> Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                <span class="toggle-icon">☀</span>
+            </button>
+            <button id="nav-mobile-toggle" class="nav-mobile-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#accueil"><span class="mono">01</span> Accueil</a>
+        <a href="#profil"><span class="mono">02</span> Profil</a>
+        <a href="#services"><span class="mono">03</span> Services</a>
+        <a href="#projets"><span class="mono">04</span> Projets</a>
+        <a href="#contact"><span class="mono">05</span> Contact</a>
+    </div>
+
+    <main>
+        <!-- HERO -->
+        <section id="accueil" class="hero-section split-hero">
+            <div class="hero-v6-container">
+                <div class="hero-v6-content">
+                    <h1 class="hero-v6-title">
+                        JE DONNE<br>
+                        <span class="gradient-text">VIE</span> AUX<br>
+                        MARQUES<span style="color: var(--accent);">.</span>
+                    </h1>
+
+                    <div class="hero-specialties">
+                        <span class="specialty-chip"><i class="chip-dot"></i>Branding</span>
+                        <span class="specialty-chip"><i class="chip-dot"></i>UI / UX</span>
+                        <span class="specialty-chip"><i class="chip-dot"></i>Packaging</span>
+                        <span class="specialty-chip"><i class="chip-dot"></i>Social</span>
+                    </div>
+
+                    <p class="hero-v6-desc">
+                        Designer créatif & stratège digital. Je construis des identités visuelles
+                        qui marquent les esprits du <strong>branding</strong> au
+                        <strong>packaging</strong>, en passant par l'<strong>UI/UX</strong>.
+                    </p>
+
+                    <div class="hero-v6-actions">
+                        <a href="#projets" class="btn btn-primary cta-btn">
+                            <span class="btn-text">VOIR LES PROJETS</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary cta-btn">
+                            <span class="btn-text">ME CONTACTER</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">05<span class="accent-dot">+</span></span>
+                            <span class="stat-label">Projets Majeurs</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">02<span class="accent-dot">+</span></span>
+                            <span class="stat-label">Ans d'Expérience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100<span class="accent-dot">%</span></span>
+                            <span class="stat-label">Dévouement</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-trust">
+                        <span class="hero-trust-label mono">ILS ONT FAIT CONFIANCE</span>
+                        <div class="hero-trust-list">
+                            <span>Kawsara</span>
+                            <span>·</span>
+                            <span>Luméa</span>
+                            <span>·</span>
+                            <span>Murid Pro</span>
+                            <span>·</span>
+                            <span>PAD</span>
+                            <span>·</span>
+                            <span>Yaraam</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-v6-visual-wrap">
+                    <div class="hero-v6-visual">
+                        <img src="Blackbuur/hero.png" alt="Cheikh Ahmadou Fall" class="portrait-v6">
+                    </div>
+                    <div class="visual-frame"></div>
+                    <div class="hero-main-glow"></div>
+                    <div class="hero-floating-badge mono">
+                        <span class="badge-dot"></span>
+                        DISPONIBLE POUR PROJETS
+                    </div>
+                    <div class="hero-portrait-meta mono">
+                        <span class="meta-k">CHEIKH A. FALL</span>
+                        <span class="meta-v">FOUNDER · BLACKBUUR</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-bg-text">BLACKBUUR</div>
+
+            <div class="hero-side-bar left">
+                <span class="vertical-text">EST. 2024 · PORTFOLIO</span>
+            </div>
+            <div class="hero-side-bar right">
+                <span class="vertical-text">SCROLL TO DISCOVER ↓</span>
+            </div>
+
+            <a href="#profil" class="hero-scroll">
+                <span class="hero-scroll-text">SCROLL</span>
+                <span class="hero-scroll-line"></span>
+            </a>
+        </section>
+
+        <!-- MARQUEE -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span class="marquee-item">Branding</span>
+                <span class="marquee-item">Identité Visuelle</span>
+                <span class="marquee-item">Packaging</span>
+                <span class="marquee-item">UI / UX Design</span>
+                <span class="marquee-item">Social Media</span>
+                <span class="marquee-item">Print Design</span>
+                <span class="marquee-item">Art Direction</span>
+                <span class="marquee-item">Branding</span>
+                <span class="marquee-item">Identité Visuelle</span>
+                <span class="marquee-item">Packaging</span>
+                <span class="marquee-item">UI / UX Design</span>
+                <span class="marquee-item">Social Media</span>
+                <span class="marquee-item">Print Design</span>
+                <span class="marquee-item">Art Direction</span>
+            </div>
+        </div>
+
+        <!-- PROFIL -->
+        <section id="profil" class="section profile-section">
+            <div class="container editorial-grid">
+                <div class="editorial-left">
+                    <span class="mono-label reveal-up">À PROPOS / 01</span>
+                    <h2 class="editorial-title reveal-text">
+                        CHEIKH <span class="outline-text">AHMADOU</span> FALL
+                    </h2>
+                    <div class="editorial-body reveal-up">
+                        <p>
+                            Designer créatif & stratège digital basé au <strong>Sénégal</strong>, je transforme
+                            les visions en identités visuelles puissantes. Je travaille avec des marques
+                            locales et internationales pour créer des expériences mémorables.
+                        </p>
+                        <p>
+                            Mon expertise couvre le <strong>branding complet</strong>, le
+                            <strong>design UI/UX</strong>, le packaging, la création de contenu social
+                            et le design d'applications mobiles. Chaque projet est une nouvelle histoire
+                            à raconter.
+                        </p>
+                    </div>
+                    <div class="skills-magazine reveal-up">
+                        <div class="skill-row">
+                            <div class="skill-row-top">
+                                <span class="mono">BRANDING & IDENTITÉ</span>
+                                <span class="skill-percent mono">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="bar-fill" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row-top">
+                                <span class="mono">DESIGN UI / UX</span>
+                                <span class="skill-percent mono">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="bar-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row-top">
+                                <span class="mono">PACKAGING & PRINT</span>
+                                <span class="skill-percent mono">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="bar-fill" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-row-top">
+                                <span class="mono">SOCIAL MEDIA DESIGN</span>
+                                <span class="skill-percent mono">92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="bar-fill" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="editorial-right reveal-up">
+                    <div class="portrait-collage">
+                        <div class="portrait-main">
+                            <img src="Blackbuur/profile.jpg" alt="Cheikh Ahmadou Fall — Portrait" class="portrait-img">
+                        </div>
+                        <div class="portrait-secondary">
+                            <img src="portrait.jpg" alt="Cheikh Ahmadou Fall — At Work" class="portrait-img-secondary">
+                        </div>
+                        <div class="portrait-accent"></div>
+                        <div class="portrait-label mono">CREATIVE DIRECTOR</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="section services-section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="mono-label reveal-up">CE QUE JE FAIS / 02</span>
+                    <h2 class="editorial-title reveal-text">MES <span class="gradient-text">SERVICES</span></h2>
+                </div>
+
+                <div class="services-grid">
+                    <article class="service-card reveal-up">
+                        <span class="service-num">01 / BRANDING</span>
+                        <div class="service-icon">◆</div>
+                        <h3 class="service-title">Identité Visuelle</h3>
+                        <p class="service-desc">
+                            Création d'univers de marque complets — du logo à la charte graphique,
+                            en passant par le storytelling visuel.
+                        </p>
+                        <div class="service-tags">
+                            <span class="service-tag">Logo</span>
+                            <span class="service-tag">Charte</span>
+                            <span class="service-tag">Guidelines</span>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal-up">
+                        <span class="service-num">02 / DIGITAL</span>
+                        <div class="service-icon">◈</div>
+                        <h3 class="service-title">UI / UX Design</h3>
+                        <p class="service-desc">
+                            Interfaces web & mobiles pensées pour l'utilisateur.
+                            Parcours fluides, esthétique moderne, prototypes interactifs.
+                        </p>
+                        <div class="service-tags">
+                            <span class="service-tag">Web</span>
+                            <span class="service-tag">Mobile</span>
+                            <span class="service-tag">Prototyping</span>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal-up">
+                        <span class="service-num">03 / PRINT</span>
+                        <div class="service-icon">◇</div>
+                        <h3 class="service-title">Packaging & Print</h3>
+                        <p class="service-desc">
+                            Design packaging et supports print qui transforment un produit
+                            en expérience tangible.
+                        </p>
+                        <div class="service-tags">
+                            <span class="service-tag">Packaging</span>
+                            <span class="service-tag">Édition</span>
+                            <span class="service-tag">Print</span>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal-up">
+                        <span class="service-num">04 / SOCIAL</span>
+                        <div class="service-icon">◉</div>
+                        <h3 class="service-title">Social Media</h3>
+                        <p class="service-desc">
+                            Templates, campagnes et feed cohérents pour faire exister
+                            votre marque sur Instagram, LinkedIn et au-delà.
+                        </p>
+                        <div class="service-tags">
+                            <span class="service-tag">Templates</span>
+                            <span class="service-tag">Content</span>
+                            <span class="service-tag">Campagnes</span>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal-up">
+                        <span class="service-num">05 / DIRECTION</span>
+                        <div class="service-icon">✦</div>
+                        <h3 class="service-title">Direction Artistique</h3>
+                        <p class="service-desc">
+                            Vision créative globale pour projets éditoriaux, campagnes
+                            et lancements de marque.
+                        </p>
+                        <div class="service-tags">
+                            <span class="service-tag">Art Direction</span>
+                            <span class="service-tag">Campaign</span>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal-up">
+                        <span class="service-num">06 / STRATÉGIE</span>
+                        <div class="service-icon">◎</div>
+                        <h3 class="service-title">Brand Strategy</h3>
+                        <p class="service-desc">
+                            Positionnement, naming, territoire de marque —
+                            la réflexion avant la création.
+                        </p>
+                        <div class="service-tags">
+                            <span class="service-tag">Strategy</span>
+                            <span class="service-tag">Naming</span>
+                            <span class="service-tag">Positioning</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETS -->
+        <section id="projets" class="section projects-section">
+            <div class="container">
+                <div class="projects-header">
+                    <span class="mono-label reveal-up">TRAVAUX SÉLECTIONNÉS / 03</span>
+                    <h2 class="editorial-title reveal-text">
+                        PROJETS <span class="dim-text">RÉCENTS</span>
+                    </h2>
+                </div>
+
+                <div class="projects-modern-grid">
+                    <article class="modern-card reveal-up">
+                        <div class="card-image">
+                            <img src="Kawsara/poster.jpg" alt="Kawsara">
+                            <div class="card-overlay"></div>
+                            <div class="card-num">01</div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-cat">BRANDING & PACKAGING · 2024</span>
+                            <h3 class="card-title">Kawsara</h3>
+                            <a href="kawsara.html" class="card-link">VOIR L'ÉTUDE <span>→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="modern-card reveal-up">
+                        <div class="card-image">
+                            <img src="LUMEA/BGS LUMEA carré.png" alt="Luméa">
+                            <div class="card-overlay"></div>
+                            <div class="card-num">02</div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-cat">BRANDING & WEB · 2024</span>
+                            <h3 class="card-title">Luméa</h3>
+                            <a href="lumea.html" class="card-link">VOIR L'ÉTUDE <span>→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="modern-card reveal-up">
+                        <div class="card-image">
+                            <img src="Murid pro/Page murid pro.jpg" alt="Murid Pro">
+                            <div class="card-overlay"></div>
+                            <div class="card-num">03</div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-cat">APPLICATION MOBILE · 2023</span>
+                            <h3 class="card-title">Murid Pro</h3>
+                            <a href="murid-pro.html" class="card-link">VOIR L'ÉTUDE <span>→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="modern-card reveal-up">
+                        <div class="card-image">
+                            <img src="PAD Branding/Mug Mockup.png" alt="Pad Branding">
+                            <div class="card-overlay"></div>
+                            <div class="card-num">04</div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-cat">IDENTITÉ VISUELLE · 2023</span>
+                            <h3 class="card-title">PAD Branding</h3>
+                            <a href="pad-branding.html" class="card-link">VOIR L'ÉTUDE <span>→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="modern-card reveal-up">
+                        <div class="card-image">
+                            <img src="Yaaram/Yaaram mockup  01.jpg" alt="Yaraam">
+                            <div class="card-overlay"></div>
+                            <div class="card-num">05</div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-cat">BRANDING & PRÉSENTATION · 2024</span>
+                            <h3 class="card-title">Yaraam</h3>
+                            <a href="yaraam.html" class="card-link">VOIR L'ÉTUDE <span>→</span></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="contact-editorial">
+                    <span class="mono-label reveal-up">CONTACT / 04</span>
+                    <h2 class="editorial-title reveal-text">
+                        PARLONS DE VOTRE <span class="gradient-text">PROCHAIN</span><br>PROJET
+                    </h2>
+                </div>
+
+                <div class="contact-layout">
+                    <aside class="contact-info reveal-up">
+                        <div class="contact-info-item">
+                            <span class="label">EMAIL</span>
+                            <span class="value">
+                                <a href="mailto:cheikhfalldigital@gmail.com">cheikhfalldigital@gmail.com</a>
+                            </span>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="label">LOCALISATION</span>
+                            <span class="value">Dakar, Sénégal</span>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="label">DISPONIBILITÉ</span>
+                            <span class="value" style="display: flex; align-items: center; gap: 0.6rem;">
+                                <span class="badge-dot"></span> Nouveaux projets Q2/Q3 2026
+                            </span>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="label">TEMPS DE RÉPONSE</span>
+                            <span class="value">Sous 24h</span>
+                        </div>
+                    </aside>
+
+                    <form action="https://formsubmit.co/cheikhfalldigital@gmail.com" method="POST" id="contact-form"
+                        class="contact-card reveal-up">
+                        <input type="hidden" name="_subject" value="Nouveau message — Portfolio Blackbuur">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+
+                        <div class="minimal-grid">
+                            <div class="input-wrap">
+                                <input type="text" id="name" name="name" required placeholder=" ">
+                                <label for="name">Nom complet</label>
+                                <div class="input-line"></div>
+                            </div>
+                            <div class="input-wrap">
+                                <input type="email" id="email" name="email" required placeholder=" ">
+                                <label for="email">Adresse email</label>
+                                <div class="input-line"></div>
+                            </div>
+                        </div>
+                        <div class="input-wrap full-width">
+                            <input type="text" id="subject" name="subject" placeholder=" ">
+                            <label for="subject">Sujet / Type de projet</label>
+                            <div class="input-line"></div>
+                        </div>
+                        <div class="input-wrap full-width">
+                            <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+                            <label for="message">Votre message</label>
+                            <div class="input-line"></div>
+                        </div>
+
+                        <div class="contact-actions">
+                            <button type="submit" class="btn btn-primary cta-btn magnetic-btn">
+                                <span class="btn-text">ENVOYER LE MESSAGE</span>
+                                <span class="btn-arrow">→</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="social-footer reveal-up">
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/cheikh-ahmadou-fall-5411661b9/" target="_blank"
+                            rel="noopener" class="magnetic-item">LINKEDIN</a>
+                        <a href="https://www.behance.net/ahmaduhfaal" target="_blank" rel="noopener"
+                            class="magnetic-item">BEHANCE</a>
+                        <a href="https://www.instagram.com/ahmaduh__faal/" target="_blank" rel="noopener"
+                            class="magnetic-item">INSTAGRAM</a>
+                        <a href="mailto:cheikhfalldigital@gmail.com" class="magnetic-item">EMAIL</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2026 <span class="footer-accent">BLACKBUUR</span> · DESIGNED WITH CARE IN SENEGAL</p>
+            <p style="opacity: 0.5;">TOUS DROITS RÉSERVÉS</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
