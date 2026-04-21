@@ -13,16 +13,47 @@
 
 <body class="project-page">
 
-    <header class="navbar">
-        <div class="nav-container glass">
-            <a href="index.html" class="nav-brand">
-                <img src="logo_blackbuur.png" alt="Blackbuur" class="nav-logo">
+        <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html#accueil" class="nav-brand" aria-label="Blackbuur — Retour accueil">
+                <img src="logo_blackbuur.png" alt="Blackbuur Logo" class="nav-logo" width="34" height="34">
             </a>
-            <nav class="nav-links">
-                <a href="index.html" class="nav-link">← Retour</a>
+            <nav class="nav-links" aria-label="Navigation principale">
+                <a href="index.html#accueil" class="nav-link"><span class="mono">01</span> Accueil</a>
+                <a href="index.html#profil" class="nav-link"><span class="mono">02</span> Profil</a>
+                <a href="index.html#services" class="nav-link"><span class="mono">03</span> Services</a>
+                <a href="index.html#projets" class="nav-link"><span class="mono">04</span> Projets</a>
+                <a href="index.html#contact" class="nav-link"><span class="mono">05</span> Contact</a>
             </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                <span class="toggle-icon">☀</span>
+            </button>
+            <button id="nav-mobile-toggle" class="nav-mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Popup Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-card" role="dialog" aria-modal="true" aria-label="Menu">
+            <div class="mobile-menu-header">
+                <span class="mono">MENU</span>
+                <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Fermer le menu">×</button>
+            </div>
+            <a href="index.html#accueil"><span>Accueil</span> <span class="mono">01</span></a>
+            <a href="index.html#profil"><span>Profil</span> <span class="mono">02</span></a>
+            <a href="index.html#services"><span>Services</span> <span class="mono">03</span></a>
+            <a href="index.html#projets"><span>Projets</span> <span class="mono">04</span></a>
+            <a href="index.html#contact"><span>Contact</span> <span class="mono">05</span></a>
+            <div class="mobile-menu-footer">
+                <a href="https://www.linkedin.com/in/cheikh-ahmadou-fall-5411661b9/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.behance.net/ahmaduhfaal" target="_blank" rel="noopener">Behance</a>
+                <a href="https://www.instagram.com/ahmaduh__faal/" target="_blank" rel="noopener">Instagram</a>
+            </div>
+        </div>
+    </div>
+
     <main>
         <section class="project-hero">
             <div class="container project-hero-container">
@@ -213,6 +244,12 @@
         <img id="lightbox-img" class="lightbox-img" src="" alt="Zoomed view">
     </div>
 
+        <!-- Scroll to top -->
+    <button id="scroll-top" class="scroll-top" aria-label="Remonter en haut de page">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
     <script src="main.js"></script>
     <script>
         // Simple router to populate content based on filename
