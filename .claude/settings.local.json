@@ -2,7 +2,29 @@
   "permissions": {
     "allow": [
       "Bash(rm -rf node_modules package-lock.json)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(npm audit *)",
+      "Bash(wait bim2o1asx *)",
+      "Bash(npm run *)",
+      "Bash(node --check api/submissions/contact.js)",
+      "Bash(node --check api/submissions/agency.js)",
+      "Bash(node --check api/_lib/handler.js)",
+      "Bash(node --check server/index.js)",
+      "Bash(node --check server/routes/submissions.js)",
+      "Bash(DATABASE_URL='postgresql://neondb_owner:npg_FOWaCl7YVxX3@ep-calm-star-andybp0l.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require' node server/scripts/inspect.js)",
+      "Bash(DATABASE_URL='postgresql://neondb_owner:npg_FOWaCl7YVxX3@ep-calm-star-andybp0l.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require' node server/scripts/migrate-categories.js)",
+      "Bash(grep -v \"^$\")",
+      "Bash(node --check server/utils/validate.js)",
+      "Bash(node --check server/utils/mailer.js)",
+      "Bash(node --check server/db.js)",
+      "Bash(cwebp -version)",
+      "Bash(magick -version)",
+      "Bash(npm init *)",
+      "Bash(node convert-webp.js)",
+      "Bash(node convert-html-webp.js)",
+      "Bash(vercel --version)",
+      "Bash(vercel whoami *)",
+      "Bash(taskkill //F //IM vercel.exe)"
     ]
   }
 }

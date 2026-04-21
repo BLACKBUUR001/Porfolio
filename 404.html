@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0b">
+    <meta name="robots" content="noindex, follow">
+    <title>404 — Page introuvable · BLACKBUUR</title>
+    <meta name="description" content="Cette page n'existe pas ou a été déplacée. Retour à l'accueil du portfolio BLACKBUUR.">
+
+    <link rel="icon" type="image/png" href="logo_blackbuur.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 6rem 1.5rem 4rem;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .error-content {
+            max-width: 620px;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .error-code {
+            font-family: var(--font-heading);
+            font-size: clamp(7rem, 22vw, 16rem);
+            font-weight: 600;
+            line-height: 0.9;
+            letter-spacing: -0.05em;
+            margin-bottom: 1.25rem;
+            background: linear-gradient(180deg, var(--text-color) 0%, var(--accent) 60%, rgba(232, 176, 75, 0.3) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .error-code::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 55%);
+            z-index: -1;
+            filter: blur(50px);
+            opacity: 0.6;
+        }
+
+        .error-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: var(--accent);
+            letter-spacing: 2.5px;
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            padding: 0.45rem 0.9rem;
+            border: 1px solid var(--accent-soft);
+            background: var(--accent-soft);
+            border-radius: var(--radius-full);
+            margin-bottom: 2rem;
+            font-family: var(--font-mono);
+            font-weight: 500;
+        }
+
+        .error-tag::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        .error-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            color: var(--text-color);
+        }
+
+        .error-desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .error-suggest {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+            max-width: 440px;
+        }
+
+        .error-suggest-label {
+            font-family: var(--font-mono);
+            font-size: 0.58rem;
+            letter-spacing: 2.5px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .error-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .error-link {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 0.5rem 0.9rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-full);
+            color: var(--text-muted);
+            transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+            font-weight: 500;
+        }
+
+        .error-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        .error-side {
+            position: absolute;
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            letter-spacing: 2.5px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .error-side.top-left {
+            top: 5.5rem;
+            left: 1.75rem;
+        }
+
+        .error-side.bottom-right {
+            bottom: 1.5rem;
+            right: 1.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .error-side { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="visual-noise"></div>
+    <div class="dynamic-background">
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+    <div id="tech-canvas-bg"></div>
+    <div id="mouse-glow"></div>
+
+    <!-- NAV -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand" aria-label="Blackbuur — Retour accueil">
+                <img src="logo_blackbuur.png" alt="Blackbuur Logo" class="nav-logo" width="34" height="34">
+            </a>
+            <nav class="nav-links" aria-label="Navigation principale">
+                <a href="/#accueil" class="nav-link"><span class="mono">01</span> Accueil</a>
+                <a href="/#profil" class="nav-link"><span class="mono">02</span> Profil</a>
+                <a href="/#services" class="nav-link"><span class="mono">03</span> Services</a>
+                <a href="/#projets" class="nav-link"><span class="mono">04</span> Projets</a>
+                <a href="/#contact" class="nav-link"><span class="mono">05</span> Contact</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                <span class="toggle-icon">☀</span>
+            </button>
+            <button id="nav-mobile-toggle" class="nav-mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Popup Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-card" role="dialog" aria-modal="true" aria-label="Menu">
+            <div class="mobile-menu-header">
+                <span class="mono">MENU</span>
+                <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Fermer le menu">×</button>
+            </div>
+            <a href="/#accueil"><span>Accueil</span> <span class="mono">01</span></a>
+            <a href="/#profil"><span>Profil</span> <span class="mono">02</span></a>
+            <a href="/#services"><span>Services</span> <span class="mono">03</span></a>
+            <a href="/#projets"><span>Projets</span> <span class="mono">04</span></a>
+            <a href="/#contact"><span>Contact</span> <span class="mono">05</span></a>
+        </div>
+    </div>
+
+    <main>
+        <section class="error-page">
+            <span class="error-side top-left">ERR // 404_NOT_FOUND</span>
+            <span class="error-side bottom-right">BLACKBUUR · DAKAR</span>
+
+            <div class="error-content">
+                <div class="error-tag">SIGNAL PERDU</div>
+                <h1 class="error-code">404</h1>
+                <h2 class="error-title">Cette page semble s'être égarée.</h2>
+                <p class="error-desc">
+                    La page que vous cherchez n'existe pas, ou a peut-être été déplacée.
+                    Pas d'inquiétude — voici quelques pistes pour continuer l'exploration.
+                </p>
+
+                <div class="error-actions">
+                    <a href="/" class="btn btn-primary cta-btn">
+                        <span class="btn-text">Retour à l'accueil</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="/#contact" class="btn btn-secondary cta-btn">
+                        <span class="btn-text">Me contacter</span>
+                    </a>
+                </div>
+
+                <div class="error-suggest">
+                    <span class="error-suggest-label">OU CONTINUEZ ICI</span>
+                    <div class="error-links">
+                        <a href="/kawsara.html" class="error-link">Kawsara</a>
+                        <a href="/lumea.html" class="error-link">Luméa</a>
+                        <a href="/murid-pro.html" class="error-link">Murid Pro</a>
+                        <a href="/pad-branding.html" class="error-link">PAD</a>
+                        <a href="/yaraam.html" class="error-link">Yaraam</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

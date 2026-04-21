@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /*.js$
+Disallow: /package*.json
+
+Sitemap: https://blackbuur.com/sitemap.xml
