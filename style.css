@@ -230,40 +230,8 @@ a { color: inherit; text-decoration: none; }
     100% { transform: translate(-40px, 60px) scale(0.95); }
 }
 
-/* --- Custom cursor (smoother, desktop only) --- */
-@media (hover: hover) and (pointer: fine) {
-    body, a, button, input, textarea {
-        cursor: none;
-    }
-}
-
-#custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate3d(-50%, -50%, 0);
-    transition: width 0.2s var(--ease-out), height 0.2s var(--ease-out),
-                background 0.2s ease, border 0.2s ease;
-    will-change: transform;
-    display: none;
-    mix-blend-mode: difference;
-}
-
-#custom-cursor.is-active { display: block; }
-
-#custom-cursor.is-hover {
-    width: 36px;
-    height: 36px;
-    background: transparent;
-    border: 1px solid var(--accent);
-    mix-blend-mode: normal;
-}
+/* --- Custom cursor removed: native cursor + mouse glow only --- */
+#custom-cursor { display: none !important; }
 
 /* --- Navigation --- */
 .navbar {

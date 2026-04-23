@@ -27,50 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 200);
     });
 
-    /* ---------- SMOOTH CURSOR (lerp-based, butter smooth) ---------- */
-    if (isDesktop) {
-        const cursor = document.createElement('div');
-        cursor.id = 'custom-cursor';
-        document.body.appendChild(cursor);
-
-        let targetX = window.innerWidth / 2;
-        let targetY = window.innerHeight / 2;
-        let currentX = targetX;
-        let currentY = targetY;
-        let activated = false;
-
-        const LERP = 0.28; // higher = snappier, lower = smoother trail
-
-        document.addEventListener('mousemove', (e) => {
-            targetX = e.clientX;
-            targetY = e.clientY;
-            if (!activated) {
-                cursor.classList.add('is-active');
-                currentX = targetX;
-                currentY = targetY;
-                activated = true;
-            }
-        }, { passive: true });
-
-        document.addEventListener('mouseleave', () => cursor.classList.remove('is-active'));
-        document.addEventListener('mouseenter', () => { if (activated) cursor.classList.add('is-active'); });
-
-        function tick() {
-            currentX += (targetX - currentX) * LERP;
-            currentY += (targetY - currentY) * LERP;
-            cursor.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
-            requestAnimationFrame(tick);
-        }
-        tick();
-
-        // Hover state
-        document.querySelectorAll('a, button, .modern-card, .service-card, .gallery-item, input, textarea, .specialty-chip')
-            .forEach(el => {
-                el.addEventListener('mouseenter', () => cursor.classList.add('is-hover'));
-                el.addEventListener('mouseleave', () => cursor.classList.remove('is-hover'));
-            });
-    }
-
     /* ---------- Mouse glow + grid parallax (rAF throttled) ---------- */
     const glow = document.getElementById('mouse-glow');
     const bg = document.getElementById('tech-canvas-bg');
