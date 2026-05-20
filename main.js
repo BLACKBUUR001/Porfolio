@@ -177,18 +177,46 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ---------- Active nav link on scroll ---------- */
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
+    const mobileBottomLinks = document.querySelectorAll('.mobile-bottom-link');
     const navObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
+                // Top navbar links
                 navLinks.forEach(link => {
                     link.classList.toggle('active',
                         link.getAttribute('href') === `#${id}`);
+                });
+                // Bottom mobile navbar links
+                mobileBottomLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    const isActive = href === `#${id}` || href === `index.html#${id}`;
+                    link.classList.toggle('active', isActive);
                 });
             }
         });
     }, { rootMargin: '-40% 0px -55% 0px' });
     sections.forEach(s => navObserver.observe(s));
+
+    // Highlight Projets section when on a project detail page
+    if (document.body.classList.contains('project-page')) {
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.endsWith('#projets')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        mobileBottomLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.endsWith('#projets')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    }
 
     /* ---------- Smooth anchor scroll ---------- */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

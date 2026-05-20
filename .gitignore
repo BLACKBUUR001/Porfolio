@@ -10,3 +10,5 @@ Thumbs.db
 .env.local
 convert-*.js
 update_*.js
+.claude/
+
