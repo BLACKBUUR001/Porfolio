@@ -237,8 +237,9 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 120px 0 40px; overflow-x: clip; }
 .hero__grid { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 32px; }
 .hero__hello { font-size: 18px; color: var(--ink-2); margin-bottom: 10px; }
-.hero__title { font-size: clamp(46px, 7.6vw, 108px); line-height: .98; letter-spacing: -.03em; }
-.hero__title span { color: var(--accent); display: block; }
+/* Sur une seule ligne : « BLACKBUUR. » mesure ~5,7 × la taille de police */
+.hero__title { font-size: clamp(40px, 8.2vw, 96px); line-height: 1; letter-spacing: -.03em; white-space: nowrap; }
+.hero__title span { color: var(--accent); }
 .hero__role {
   margin: 22px 0 0;
   font-family: var(--font-head); font-size: 15px;
@@ -265,13 +266,13 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 }
 .hero__disc {
   position: absolute; bottom: 16%; left: 50%; translate: -50% 0; z-index: 1;
-  width: 78%; aspect-ratio: 1; border-radius: 50%;
+  height: 66%; width: auto; aspect-ratio: 1; border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, var(--accent-2), var(--accent) 55%, #e0a400);
 }
 /* Lueur hors du masque : elle se diffuse librement autour du disque */
 .hero__glow {
-  position: absolute; bottom: -4%; left: 50%; translate: -50% 0;
-  width: 150%; aspect-ratio: 1; border-radius: 50%;
+  position: absolute; bottom: -10%; left: 50%; translate: -50% 0;
+  height: 125%; width: auto; aspect-ratio: 1; border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 198, 26, .38) 0%, rgba(255, 198, 26, .14) 35%, transparent 65%);
   filter: blur(30px);
   pointer-events: none;
@@ -280,7 +281,7 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 @keyframes breathe { 50% { opacity: .75; transform: scale(.96); } }
 .hero__ring {
   position: absolute; bottom: 3%; left: 50%; translate: -50% 0;
-  width: 94%; aspect-ratio: 1; border-radius: 50%;
+  height: 86%; width: auto; aspect-ratio: 1; border-radius: 50%;
   border: 1px dashed rgba(255, 198, 26, .4);
   animation: spin 60s linear infinite;
 }
@@ -1053,6 +1054,10 @@ html.intro, html.pt-in { overflow: hidden; }
   .hero__role { letter-spacing: .2em; font-size: 12px; }
   .hero__visual { height: 400px; }
   .hero__word { font-size: 64px; }
+  .hero__title { font-size: min(calc((100vw - 40px) / 5.9), 96px); }
+  .stats__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat { padding: 24px 18px; }
+  .stat span { font-size: 11px; letter-spacing: .1em; }
   /* Boutons pleine largeur, plus faciles à toucher */
   .hero__ctas { display: grid; grid-template-columns: 1fr; }
   .hero__ctas .btn, .cta .btn, .brief__send { justify-content: center; width: 100%; }
