@@ -41,6 +41,14 @@ const PAGES = [
   ["process.html", "Process", "process"],
 ];
 
+const DOCK = [
+  ["index.html", "Accueil", "accueil", "ph:house"],
+  ["projets.html", "Projets", "projets", "ph:squares-four"],
+  ["process.html", "Process", "process", "ph:path"],
+  ["apropos.html", "Profil", "apropos", "ph:user"],
+  ["contact.html", "Contact", "contact", "ph:chat-circle-dots"],
+];
+
 const SOCIALS = [
   ["LinkedIn", "ph:linkedin-logo", "https://www.linkedin.com/in/cheikh-ahmadou-fall-5411661b9/"],
   ["Behance", "ph:behance-logo", "https://www.behance.net/ahmaduhfaal"],
@@ -61,14 +69,35 @@ function renderLayout() {
         </a>
         <nav class="nav__links" id="navLinks">
           ${PAGES.map(([href, label, id]) => `<a href="${href}" class="${id === page ? "is-active" : ""}">${label}</a>`).join("")}
-          <a href="contact.html" class="nav__mobile-cta ${page === "contact" ? "is-active" : ""}">Contact</a>
         </nav>
         <div class="nav__actions">
           <a href="contact.html" class="btn btn--primary btn--sm nav__contact">Contact <iconify-icon icon="ph:arrow-up-right"></iconify-icon></a>
-          <button class="icon-btn nav__burger" id="burger" aria-label="Menu" aria-expanded="false"><iconify-icon icon="ph:list"></iconify-icon></button>
+          <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
         </div>
       </div>
-    </header>`);
+    </header>
+
+    <!-- Menu plein écran (mobile) -->
+    <div class="menu" id="menu" aria-hidden="true">
+      <nav class="menu__links">
+        ${[...PAGES, ["contact.html", "Contact", "contact"]].map(([href, label, id], i) => `
+          <a href="${href}" class="menu__link${id === page ? " is-active" : ""}" style="--i:${i}">
+            <small>0${i + 1}</small><span>${label}</span><iconify-icon icon="ph:arrow-up-right"></iconify-icon>
+          </a>`).join("")}
+      </nav>
+      <div class="menu__foot" style="--i:7">
+        <a href="mailto:cheikhfalldigital@gmail.com">cheikhfalldigital@gmail.com</a>
+        <div class="menu__socials">${SOCIALS.map(([l, icon, u]) => `<a href="${u}" target="_blank" rel="noopener" aria-label="${l}"><iconify-icon icon="${icon}"></iconify-icon></a>`).join("")}</div>
+      </div>
+    </div>
+
+    <!-- Barre de navigation du bas (mobile), à portée de pouce -->
+    <nav class="dock" id="dock" aria-label="Navigation rapide">
+      ${DOCK.map(([href, label, id, icon]) => `
+        <a href="${href}" class="dock__item${id === page ? " is-active" : ""}" ${id === page ? `aria-current="page"` : ""}>
+          <iconify-icon icon="${icon}"></iconify-icon><span>${label}</span>
+        </a>`).join("")}
+    </nav>`);
 
   document.body.insertAdjacentHTML("beforeend", `
     <footer class="footer">
@@ -256,11 +285,29 @@ function initCounters() {
 
 /* ---------- Nav ---------- */
 function initNav() {
-  const nav = $("#nav"), links = $("#navLinks"), burger = $("#burger");
-  const onScroll = () => nav.classList.toggle("is-scrolled", scrollY > 10);
+  const nav = $("#nav"), burger = $("#burger"), menu = $("#menu"), dock = $("#dock");
+
+  // Header opaque au scroll ; la barre du bas se cache en descendant et revient en remontant
+  let lastY = scrollY;
+  const onScroll = () => {
+    const y = scrollY;
+    nav.classList.toggle("is-scrolled", y > 10);
+    dock.classList.toggle("is-hidden", y > lastY && y > 300);
+    lastY = y;
+  };
   onScroll();
   addEventListener("scroll", onScroll, { passive: true });
-  burger.addEventListener("click", () => burger.setAttribute("aria-expanded", links.classList.toggle("is-open")));
+
+  const setMenu = open => {
+    document.documentElement.classList.toggle("menu-open", open);
+    menu.setAttribute("aria-hidden", String(!open));
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+  };
+  burger.addEventListener("click", () => setMenu(!document.documentElement.classList.contains("menu-open")));
+  $$("a", menu).forEach(a => a.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+  addEventListener("pageshow", () => setMenu(false));
 }
 
 /* ---------- Sheets : modales animées ---------- */
