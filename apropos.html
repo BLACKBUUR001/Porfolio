@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>/* Choisit l intro (1re visite) ou la transition d arrivée avant le 1er rendu */(function(){try{var d=document.documentElement,s=sessionStorage;if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;if(s.getItem("bb-pt"))d.classList.add("pt-in");else if(!s.getItem("bb-seen"))d.classList.add("intro");}catch(e){}})();</script>
+  <title>À propos — Cheikh Ahmadou Fall</title>
+  <meta name="description" content="Cheikh Ahmadou Fall, designer UI/UX basé à Dakar : applications mobiles et plateformes web centrées sur l&#39;utilisateur.">
+  <link rel="icon" href="assets/img/logo-icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/KonnectExtraBold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+</head>
+<body data-page="apropos">
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__crumb reveal"><a href="index.html">Accueil</a> <iconify-icon icon="ph:caret-right"></iconify-icon> À propos</p>
+        <h1 class="page-hero__title reveal" style="--d:.06s">Des interfaces<br>pensées pour <span>l&#39;usage.</span></h1>
+        <p class="page-hero__lead reveal" style="--d:.12s">Designer UI/UX basé à Dakar. Je conçois des produits numériques simples, utiles et agréables à utiliser.</p>
+      </div>
+      <span class="page-hero__num">01</span>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container about">
+        <div class="about__photo reveal">
+          <img src="assets/img/about.jpg" alt="Cheikh Ahmadou Fall assis, tablette sur les genoux" loading="lazy">
+        </div>
+        <div class="about__text">
+          <p class="eyebrow reveal">Qui suis-je</p>
+          <h2 class="section__title reveal">Cheikh Ahmadou <span>Fall</span></h2>
+          <p class="reveal">Designer UI/UX basé au Sénégal, je conçois des applications mobiles et des plateformes web en partant des besoins réels de leurs utilisateurs.</p>
+          <p class="reveal">De la recherche au prototype interactif, je transforme des problèmes complexes en parcours clairs, puis en interfaces cohérentes, prêtes à être développées.</p>
+
+          <div class="expertise reveal">
+            <span>Recherche utilisateur</span><span>Architecture de l&#39;information</span><span>Wireframes</span>
+            <span>UI design</span><span>Design system</span><span>Prototypage</span><span>Tests utilisateurs</span><span>Responsive &amp; mobile</span>
+          </div>
+
+          <div class="tools reveal">
+            <span><iconify-icon icon="logos:figma"></iconify-icon> Figma</span>
+            <span><iconify-icon icon="simple-icons:notion"></iconify-icon> Notion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light">
+      <div class="container">
+        <div class="section__head reveal">
+          <div>
+            <p class="eyebrow">Ma façon de travailler</p>
+            <h2 class="section__title">Ce qui me <span>guide</span></h2>
+          </div>
+        </div>
+        <div class="values">
+          <article class="value reveal"><iconify-icon icon="ph:user-focus"></iconify-icon><h3>L'utilisateur d'abord</h3><p>Chaque décision part d'un besoin réel, pas d'une préférence esthétique.</p></article>
+          <article class="value reveal" style="--d:.08s"><iconify-icon icon="ph:sparkle"></iconify-icon><h3>La simplicité</h3><p>Des interfaces épurées où chaque élément a une raison d'être.</p></article>
+          <article class="value reveal" style="--d:.16s"><iconify-icon icon="ph:handshake"></iconify-icon><h3>La collaboration</h3><p>Un échange constant avec le client et les développeurs, du brief au lancement.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bandes de projets : remplies depuis la liste PROJECTS dans main.js -->
+    <section class="section reel-section">
+      <div class="container section__head reveal">
+        <div>
+          <p class="eyebrow">Produits conçus</p>
+          <h2 class="section__title">13 projets, <span>un seul objectif&nbsp;:</span> l'usage.</h2>
+        </div>
+        <a href="projets.html" class="link-arrow">Voir les projets <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+      </div>
+      <a href="projets.html" class="reel" aria-label="Voir tous les projets">
+        <div class="reel__row" data-reel="0"></div>
+        <div class="reel__row reel__row--reverse" data-reel="1"></div>
+      </a>
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

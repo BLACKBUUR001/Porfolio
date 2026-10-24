@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>/* Choisit l intro (1re visite) ou la transition d arrivée avant le 1er rendu */(function(){try{var d=document.documentElement,s=sessionStorage;if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;if(s.getItem("bb-pt"))d.classList.add("pt-in");else if(!s.getItem("bb-seen"))d.classList.add("intro");}catch(e){}})();</script>
+  <title>Services — Cheikh Ahmadou Fall</title>
+  <meta name="description" content="Services de design UI/UX, web, mobile, design system et prototypage.">
+  <link rel="icon" href="assets/img/logo-icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/KonnectExtraBold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+</head>
+<body data-page="services">
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__crumb reveal"><a href="index.html">Accueil</a> <iconify-icon icon="ph:caret-right"></iconify-icon> Services</p>
+        <h1 class="page-hero__title reveal" style="--d:.06s">Concevoir.<br>Prototyper. <span>Simplifier.</span></h1>
+        <p class="page-hero__lead reveal" style="--d:.12s">Du parcours utilisateur au prototype interactif, des solutions digitales pensées pour vos objectifs.</p>
+      </div>
+      <span class="page-hero__num">02</span>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container services-grid services-grid--3">
+        <article class="service reveal">
+          <span class="service__num">01</span>
+          <span class="service__icon"><iconify-icon icon="ph:cursor-click"></iconify-icon></span>
+          <h3>UI/UX Design</h3>
+          <p>Interfaces intuitives et parcours fluides, pensés à partir des besoins réels de vos utilisateurs.</p>
+          <div class="chips"><span>Recherche</span><span>Parcours</span><span>UI</span></div>
+        </article>
+        <article class="service reveal" style="--d:.08s">
+          <span class="service__num">02</span>
+          <span class="service__icon"><iconify-icon icon="ph:browsers"></iconify-icon></span>
+          <h3>Web Design</h3>
+          <p>Sites vitrines, plateformes et landing pages modernes, responsives et orientés conversion.</p>
+          <div class="chips"><span>Site vitrine</span><span>Plateforme</span><span>Landing</span></div>
+        </article>
+        <article class="service reveal" style="--d:.16s">
+          <span class="service__num">03</span>
+          <span class="service__icon"><iconify-icon icon="ph:device-mobile"></iconify-icon></span>
+          <h3>App Mobile</h3>
+          <p>Applications iOS &amp; Android, de la wireframe aux écrans finaux prêts pour le développement.</p>
+          <div class="chips"><span>iOS</span><span>Android</span><span>Wireframes</span></div>
+        </article>
+        <article class="service reveal">
+          <span class="service__num">04</span>
+          <span class="service__icon"><iconify-icon icon="ph:squares-four"></iconify-icon></span>
+          <h3>Design System</h3>
+          <p>Composants, couleurs et typographies cohérents pour faire grandir votre produit sans dette visuelle.</p>
+          <div class="chips"><span>Composants</span><span>Tokens</span><span>Guidelines</span></div>
+        </article>
+        <article class="service reveal" style="--d:.08s">
+          <span class="service__num">05</span>
+          <span class="service__icon"><iconify-icon icon="ph:play-circle"></iconify-icon></span>
+          <h3>Prototypage</h3>
+          <p>Prototypes Figma interactifs pour tester, présenter et valider avant d'écrire une ligne de code.</p>
+          <div class="chips"><span>Figma</span><span>Tests</span><span>Démo</span></div>
+        </article>
+        <article class="service reveal" style="--d:.16s">
+          <span class="service__num">06</span>
+          <span class="service__icon"><iconify-icon icon="ph:magnifying-glass"></iconify-icon></span>
+          <h3>Recherche &amp; audit UX</h3>
+          <p>Interviews, analyse de l'existant et audit ergonomique pour savoir quoi améliorer en priorité.</p>
+          <div class="chips"><span>Interviews</span><span>Audit UX</span><span>Benchmark</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <h2>Vous avez un produit à concevoir&nbsp;?</h2>
+          <a href="contact.html" class="btn">Démarrer un projet <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>/* Choisit l intro (1re visite) ou la transition d arrivée avant le 1er rendu */(function(){try{var d=document.documentElement,s=sessionStorage;if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;if(s.getItem("bb-pt"))d.classList.add("pt-in");else if(!s.getItem("bb-seen"))d.classList.add("intro");}catch(e){}})();</script>
+  <title>Process — Cheikh Ahmadou Fall</title>
+  <meta name="description" content="Le process de design UI/UX de Cheikh Ahmadou Fall, en 5 étapes.">
+  <link rel="icon" href="assets/img/logo-icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/KonnectExtraBold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+</head>
+<body data-page="process">
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__crumb reveal"><a href="index.html">Accueil</a> <iconify-icon icon="ph:caret-right"></iconify-icon> Process</p>
+        <h1 class="page-hero__title reveal" style="--d:.06s">Une feuille<br>de route <span>claire.</span></h1>
+        <p class="page-hero__lead reveal" style="--d:.12s">Cinq étapes pour passer d'une idée à un produit testé, documenté et prêt à être développé.</p>
+      </div>
+      <span class="page-hero__num">04</span>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="road" id="road">
+          <!-- Tracé en serpentin ; la version jaune se dessine au fil du scroll -->
+          <svg class="road__path" viewBox="0 0 120 1000" preserveAspectRatio="none" aria-hidden="true">
+            <path class="road__base" d="M60 0 Q120 50 60 100 T60 200 T60 300 T60 400 T60 500 T60 600 T60 700 T60 800 T60 900 T60 1000" />
+            <path class="road__draw" pathLength="1" d="M60 0 Q120 50 60 100 T60 200 T60 300 T60 400 T60 500 T60 600 T60 700 T60 800 T60 900 T60 1000" />
+          </svg>
+          <ol class="road__steps">
+          <li class="rstep" style="--i:0">
+            <article class="rstep__card reveal">
+              <span class="rstep__tag">Étape 01</span>
+              <h3>Découvrir</h3>
+              <p>Comprendre l&#39;activité, les utilisateurs et les objectifs à travers des échanges, des interviews et l&#39;analyse de l&#39;existant.</p>
+              <div class="chips"><span>Brief &amp; objectifs</span><span>Interviews utilisateurs</span><span>Audit de l&#39;existant</span></div>
+            </article>
+            <span class="rstep__node"><iconify-icon icon="ph:magnifying-glass"></iconify-icon></span>
+            <span class="rstep__big" aria-hidden="true">01</span>
+          </li>
+          <li class="rstep" style="--i:1">
+            <article class="rstep__card reveal">
+              <span class="rstep__tag">Étape 02</span>
+              <h3>Définir</h3>
+              <p>Transformer la recherche en insights et en stratégie : qui sont les utilisateurs, quels problèmes résoudre en priorité.</p>
+              <div class="chips"><span>Benchmark</span><span>Personas</span><span>Parcours utilisateur</span></div>
+            </article>
+            <span class="rstep__node"><iconify-icon icon="ph:target"></iconify-icon></span>
+            <span class="rstep__big" aria-hidden="true">02</span>
+          </li>
+          <li class="rstep" style="--i:2">
+            <article class="rstep__card reveal">
+              <span class="rstep__tag">Étape 03</span>
+              <h3>Concevoir</h3>
+              <p>Des wireframes aux maquettes finales, en construisant un design system qui garantit la cohérence.</p>
+              <div class="chips"><span>Architecture &amp; wireframes</span><span>Maquettes UI</span><span>Design system</span></div>
+            </article>
+            <span class="rstep__node"><iconify-icon icon="ph:pen-nib"></iconify-icon></span>
+            <span class="rstep__big" aria-hidden="true">03</span>
+          </li>
+          <li class="rstep" style="--i:3">
+            <article class="rstep__card reveal">
+              <span class="rstep__tag">Étape 04</span>
+              <h3>Prototyper</h3>
+              <p>Des prototypes Figma interactifs pour tester avec de vrais utilisateurs et itérer avant le développement.</p>
+              <div class="chips"><span>Prototype interactif</span><span>Tests utilisateurs</span><span>Itérations</span></div>
+            </article>
+            <span class="rstep__node"><iconify-icon icon="ph:play"></iconify-icon></span>
+            <span class="rstep__big" aria-hidden="true">04</span>
+          </li>
+          <li class="rstep" style="--i:4">
+            <article class="rstep__card reveal">
+              <span class="rstep__tag">Étape 05</span>
+              <h3>Livrer</h3>
+              <p>Un handoff propre aux développeurs et un accompagnement jusqu&#39;au lancement.</p>
+              <div class="chips"><span>Specs &amp; assets</span><span>Suivi du développement</span><span>Recette &amp; lancement</span></div>
+            </article>
+            <span class="rstep__node rstep__node--end"><iconify-icon icon="ph:rocket-launch"></iconify-icon></span>
+            <span class="rstep__big" aria-hidden="true">05</span>
+          </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta reveal">
+          <h2>On commence par la découverte&nbsp;?</h2>
+          <a href="contact.html" class="btn">Me contacter <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

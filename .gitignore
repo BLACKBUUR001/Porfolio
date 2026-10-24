@@ -1,0 +1,6 @@
+# Outils locaux (serveur d'aperçu)
+.claude/
+
+# Système
+.DS_Store
+Thumbs.db

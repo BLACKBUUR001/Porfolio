@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>/* Choisit l intro (1re visite) ou la transition d arrivée avant le 1er rendu */(function(){try{var d=document.documentElement,s=sessionStorage;if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;if(s.getItem("bb-pt"))d.classList.add("pt-in");else if(!s.getItem("bb-seen"))d.classList.add("intro");}catch(e){}})();</script>
+  <title>Contact — Cheikh Ahmadou Fall</title>
+  <meta name="description" content="Contacter Cheikh Ahmadou Fall pour un projet UI/UX.">
+  <link rel="icon" href="assets/img/logo-icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/KonnectExtraBold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+</head>
+<body data-page="contact">
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__crumb reveal"><a href="index.html">Accueil</a> <iconify-icon icon="ph:caret-right"></iconify-icon> Contact</p>
+        <h1 class="page-hero__title reveal" style="--d:.06s">Créons quelque<br>chose d'<span>unique.</span></h1>
+        <p class="page-hero__lead reveal" style="--d:.12s">Un projet en tête ou juste envie de dire bonjour&nbsp;? Choisissez votre canal préféré ou écrivez-moi directement.</p>
+      </div>
+      <span class="page-hero__num">05</span>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container reach">
+        <!-- Colonne gauche : statut + canaux (chacun ouvre une modale) -->
+        <div class="reach__side">
+          <div class="methods">
+            <button class="method reveal" style="--d:.05s" data-sheet="email">
+              <iconify-icon class="method__icon" icon="ph:envelope-simple"></iconify-icon>
+              <span class="method__text"><small>Email</small><strong>cheikhfalldigital@gmail.com</strong></span>
+              <iconify-icon class="method__arrow" icon="ph:arrow-up-right"></iconify-icon>
+            </button>
+            <button class="method reveal" style="--d:.1s" data-sheet="whatsapp">
+              <iconify-icon class="method__icon" icon="ph:whatsapp-logo"></iconify-icon>
+              <span class="method__text"><small>WhatsApp</small><strong>+221 77 623 13 14</strong></span>
+              <iconify-icon class="method__arrow" icon="ph:arrow-up-right"></iconify-icon>
+            </button>
+            <button class="method reveal" style="--d:.15s" data-sheet="linkedin">
+              <iconify-icon class="method__icon" icon="ph:linkedin-logo"></iconify-icon>
+              <span class="method__text"><small>LinkedIn</small><strong>Cheikh Ahmadou Fall</strong></span>
+              <iconify-icon class="method__arrow" icon="ph:arrow-up-right"></iconify-icon>
+            </button>
+            <button class="method reveal" style="--d:.2s" data-sheet="behance">
+              <iconify-icon class="method__icon" icon="ph:behance-logo"></iconify-icon>
+              <span class="method__text"><small>Behance</small><strong>ahmaduhfaal</strong></span>
+              <iconify-icon class="method__arrow" icon="ph:arrow-up-right"></iconify-icon>
+            </button>
+          </div>
+
+          <p class="reach__loc reveal"><iconify-icon icon="ph:map-pin"></iconify-icon> Dakar, Sénégal · <time id="dakarTime">--:--</time></p>
+        </div>
+
+        <!-- Formulaire -->
+        <form class="form brief reveal" id="contactForm" style="--d:.1s" novalidate>
+          <div class="brief__head">
+            <h2>Parlez-moi de votre projet</h2>
+            <p class="muted">Trois infos et c'est parti.</p>
+          </div>
+
+          <fieldset class="brief__types">
+            <legend>Type de projet</legend>
+            <label class="pick"><input type="radio" name="type" value="Application mobile" checked><span><iconify-icon icon="ph:device-mobile"></iconify-icon>App mobile</span></label>
+            <label class="pick"><input type="radio" name="type" value="Site web"><span><iconify-icon icon="ph:browsers"></iconify-icon>Site web</span></label>
+            <label class="pick"><input type="radio" name="type" value="Design system"><span><iconify-icon icon="ph:squares-four"></iconify-icon>Design system</span></label>
+            <label class="pick"><input type="radio" name="type" value="Autre"><span><iconify-icon icon="ph:sparkle"></iconify-icon>Autre</span></label>
+          </fieldset>
+
+          <div class="form__row">
+            <label class="field"><input type="text" name="name" placeholder=" " required><span>Nom complet</span></label>
+            <label class="field"><input type="email" name="email" placeholder=" " required><span>Email</span></label>
+          </div>
+          <label class="field"><textarea name="message" rows="5" placeholder=" " required></textarea><span>Votre message</span></label>
+
+          <button type="submit" class="btn btn--primary brief__send">Envoyer le message <iconify-icon icon="ph:paper-plane-tilt"></iconify-icon></button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

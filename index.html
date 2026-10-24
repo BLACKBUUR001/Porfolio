@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>/* Choisit l intro (1re visite) ou la transition d arrivée avant le 1er rendu */(function(){try{var d=document.documentElement,s=sessionStorage;if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;if(s.getItem("bb-pt"))d.classList.add("pt-in");else if(!s.getItem("bb-seen"))d.classList.add("intro");}catch(e){}})();</script>
+  <title>Cheikh Ahmadou Fall — UI/UX Designer</title>
+  <meta name="description" content="Portfolio UI/UX de Cheikh Ahmadou Fall (Blackbuur), designer basé à Dakar. Interfaces web & mobiles pensées pour l'utilisateur.">
+  <link rel="icon" href="assets/img/logo-icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/KonnectExtraBold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+</head>
+<body data-page="accueil">
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="hero__hello reveal">Hello, je suis</p>
+          <h1 class="hero__title reveal" style="--d:.08s">CHEIKH <span>FALL.</span></h1>
+          <p class="hero__role reveal" style="--d:.16s">UI/UX &amp; Product Designer</p>
+          <p class="hero__lead reveal" style="--d:.24s">Je conçois des interfaces web &amp; mobiles pensées pour l'utilisateur&nbsp;: parcours fluides, esthétique épurée, prototypes interactifs.</p>
+          <div class="hero__ctas reveal" style="--d:.32s">
+            <a href="projets.html" class="btn btn--primary">Voir mes projets <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+            <a href="apropos.html" class="btn btn--outline">À propos</a>
+          </div>
+          <div class="hero__socials reveal" style="--d:.4s">
+            <a href="https://www.linkedin.com/in/cheikh-ahmadou-fall-5411661b9/" target="_blank" rel="noopener" aria-label="LinkedIn"><iconify-icon icon="ph:linkedin-logo"></iconify-icon></a>
+            <a href="https://www.behance.net/ahmaduhfaal" target="_blank" rel="noopener" aria-label="Behance"><iconify-icon icon="ph:behance-logo"></iconify-icon></a>
+            <a href="https://www.instagram.com/ahmaduh__faal/" target="_blank" rel="noopener" aria-label="Instagram"><iconify-icon icon="ph:instagram-logo"></iconify-icon></a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" style="--d:.15s">
+          <span class="hero__word" aria-hidden="true">UI/UX</span>
+          <div class="hero__glow" aria-hidden="true"></div>
+          <div class="hero__ring" aria-hidden="true"></div>
+          <div class="hero__stage">
+            <div class="hero__disc" aria-hidden="true"></div>
+            <img src="assets/img/photo.png" alt="Portrait de Cheikh Ahmadou Fall" class="hero__photo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ APERÇU PROJETS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <div>
+            <p class="eyebrow">Travaux sélectionnés</p>
+            <h2 class="section__title">Projets <span>récents</span></h2>
+          </div>
+          <a href="projets.html" class="link-arrow">Tous les projets <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+        </div>
+        <div class="projects" id="projects" data-limit="4"></div>
+      </div>
+    </section>
+
+    <!-- ============ APERÇU SERVICES ============ -->
+    <section class="section light">
+      <div class="container">
+        <div class="section__head reveal">
+          <div>
+            <p class="eyebrow">Ce que je fais</p>
+            <h2 class="section__title">Concevoir. Prototyper. <span>Simplifier.</span></h2>
+          </div>
+          <a href="services.html" class="link-arrow">Tous les services <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+        </div>
+        <div class="services-grid">
+          <article class="service reveal"><span class="service__num">01</span><span class="service__icon"><iconify-icon icon="ph:cursor-click"></iconify-icon></span><h3>UI/UX Design</h3><p>Interfaces intuitives et parcours fluides.</p></article>
+          <article class="service reveal" style="--d:.08s"><span class="service__num">02</span><span class="service__icon"><iconify-icon icon="ph:browsers"></iconify-icon></span><h3>Web Design</h3><p>Sites modernes et responsives qui convertissent.</p></article>
+          <article class="service reveal" style="--d:.16s"><span class="service__num">03</span><span class="service__icon"><iconify-icon icon="ph:device-mobile"></iconify-icon></span><h3>App Mobile</h3><p>De la wireframe au prototype iOS &amp; Android.</p></article>
+          <article class="service reveal" style="--d:.24s"><span class="service__num">04</span><span class="service__icon"><iconify-icon icon="ph:squares-four"></iconify-icon></span><h3>Design System</h3><p>Des composants cohérents qui durent.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ APERÇU À PROPOS ============ -->
+    <section class="section">
+      <div class="container about">
+        <div class="about__photo reveal">
+          <img src="assets/img/about.jpg" alt="Cheikh Ahmadou Fall assis, tablette sur les genoux" loading="lazy">
+        </div>
+        <div class="about__text">
+          <p class="eyebrow reveal">À propos</p>
+          <h2 class="section__title reveal">Designer UI/UX <span>centré utilisateur.</span></h2>
+          <p class="reveal">Basé au Sénégal, je conçois des applications mobiles et des plateformes web, de la recherche utilisateur au prototype interactif.</p>
+          <div class="expertise reveal" style="margin:28px 0 36px">
+            <span>Recherche utilisateur</span><span>Wireframes</span><span>UI design</span><span>Design system</span><span>Prototypage</span>
+          </div>
+          <a href="apropos.html" class="link-arrow reveal">En savoir plus <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ APERÇU PROCESS ============ -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section__head reveal">
+          <div>
+            <p class="eyebrow">Mon process</p>
+            <h2 class="section__title">Une feuille de route <span>claire</span></h2>
+          </div>
+          <a href="process.html" class="link-arrow">Voir le process <iconify-icon icon="ph:arrow-right"></iconify-icon></a>
+        </div>
+        <div class="journey">
+          <!-- Tracé ondulé qui relie les étapes ; la version jaune se dessine à l'apparition -->
+          <svg class="journey__path" viewBox="0 0 1000 96" preserveAspectRatio="none" aria-hidden="true">
+            <path class="journey__base" d="M0 48 Q50 0 100 48 T200 48 T300 48 T400 48 T500 48 T600 48 T700 48 T800 48 T900 48 T1000 48" />
+            <path class="journey__draw" pathLength="1" d="M0 48 Q50 0 100 48 T200 48 T300 48 T400 48 T500 48 T600 48 T700 48 T800 48 T900 48 T1000 48" />
+          </svg>
+
+          <ol class="journey__steps">
+            <li class="jstep" style="--i:0">
+              <div class="jstep__text"><span class="jstep__big">01</span><h3>Découvrir</h3><p>Comprendre l'activité, les utilisateurs et les objectifs.</p></div>
+              <span class="jstep__node"><iconify-icon icon="ph:magnifying-glass"></iconify-icon></span>
+            </li>
+            <li class="jstep" style="--i:1">
+              <div class="jstep__text"><span class="jstep__big">02</span><h3>Définir</h3><p>Recherche et insights transformés en stratégie.</p></div>
+              <span class="jstep__node"><iconify-icon icon="ph:target"></iconify-icon></span>
+            </li>
+            <li class="jstep" style="--i:2">
+              <div class="jstep__text"><span class="jstep__big">03</span><h3>Concevoir</h3><p>Wireframes, UI et design system.</p></div>
+              <span class="jstep__node"><iconify-icon icon="ph:pen-nib"></iconify-icon></span>
+            </li>
+            <li class="jstep" style="--i:3">
+              <div class="jstep__text"><span class="jstep__big">04</span><h3>Prototyper</h3><p>Tester avant de développer.</p></div>
+              <span class="jstep__node"><iconify-icon icon="ph:play"></iconify-icon></span>
+            </li>
+            <li class="jstep" style="--i:4">
+              <div class="jstep__text"><span class="jstep__big">05</span><h3>Livrer</h3><p>Handoff propre et lancement.</p></div>
+              <span class="jstep__node jstep__node--end"><iconify-icon icon="ph:rocket-launch"></iconify-icon></span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="section stats">
+      <div class="container">
+        <div class="stats__grid reveal">
+          <div class="stat"><strong data-count="13">0</strong><span>Projets UX/UI</span></div>
+          <div class="stat"><strong data-count="9">0</strong><span>Plateformes web</span></div>
+          <div class="stat"><strong data-count="4">0</strong><span>Applications mobiles</span></div>
+          <div class="stat"><strong data-count="2" data-suffix="+">0</strong><span>Ans d'expérience</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
