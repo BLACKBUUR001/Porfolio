@@ -751,6 +751,7 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 .field.is-error input, .field.is-error textarea { border-color: #ff6b5b; animation: shake .4s; }
 @keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
 .brief__send { justify-self: start; border: 0; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .brief__send.is-loading { pointer-events: none; opacity: .85; }
 .brief__send.is-loading iconify-icon { animation: fly .8s ease-in infinite; }
 @keyframes fly { 0% { transform: translate(0, 0); opacity: 1; } 60% { transform: translate(14px, -14px); opacity: 0; } 61% { transform: translate(-10px, 10px); opacity: 0; } 100% { transform: translate(0, 0); opacity: 1; } }

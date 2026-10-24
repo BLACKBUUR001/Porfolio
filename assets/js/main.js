@@ -313,6 +313,7 @@ function initNav() {
 /* ---------- Sheets : modales animées ---------- */
 const EMAIL = "cheikhfalldigital@gmail.com";
 const PHONE = "+221 77 623 13 14";
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${EMAIL}`;
 
 const copyField = value => `
   <div class="copy sheet__item" style="--k:3">
@@ -343,7 +344,7 @@ const SHEETS = {
     <h3 class="sheet__item" style="--k:1">Mon Behance</h3>
     <p class="sheet__item" style="--k:2">Mes projets UI/UX présentés en détail : maquettes, parcours et écrans clés.</p>
     <div class="sheet__actions sheet__item" style="--k:3"><a class="btn btn--primary" href="${SOCIALS[1][2]}" target="_blank" rel="noopener">Voir mon Behance <iconify-icon icon="ph:arrow-up-right"></iconify-icon></a></div>`,
-  success: ({ name, mailto }) => `
+  success: ({ name }) => `
     <div class="check sheet__item" style="--k:0">
       ${Array.from({ length: 12 }, (_, i) => {
         const a = (i / 12) * Math.PI * 2, r = 70 + (i % 3) * 14;
@@ -352,10 +353,16 @@ const SHEETS = {
       <svg viewBox="0 0 86 86"><circle cx="43" cy="43" r="43" /><path d="M26 44 l12 12 l22 -24" /></svg>
     </div>
     <h3 class="sheet__item" style="--k:1">Merci ${name} !</h3>
-    <p class="sheet__item" style="--k:2">Votre message est prêt. Votre messagerie va s'ouvrir avec tout pré-rempli : il ne reste qu'à cliquer sur Envoyer.</p>
+    <p class="sheet__item" style="--k:2">Votre message est bien envoyé. Je reviens vers vous très vite, directement par email.</p>
     <div class="sheet__actions sheet__item" style="--k:3">
-      <a class="btn btn--primary" href="${mailto}">Ouvrir ma messagerie <iconify-icon icon="ph:paper-plane-tilt"></iconify-icon></a>
-      <button type="button" class="btn btn--outline" data-sheet-close>Fermer</button>
+      <button type="button" class="btn btn--primary" data-sheet-close>Parfait</button>
+    </div>`,
+  error: ({ mailto }) => `${badge("ph:warning-circle")}
+    <h3 class="sheet__item" style="--k:1">Oups, l'envoi a échoué</h3>
+    <p class="sheet__item" style="--k:2">Le message n'a pas pu partir. Vous pouvez réessayer, ou me l'envoyer directement depuis votre messagerie : tout est déjà pré-rempli.</p>
+    <div class="sheet__actions sheet__item" style="--k:3">
+      <a class="btn btn--primary" href="${mailto}">Envoyer par email <iconify-icon icon="ph:paper-plane-tilt"></iconify-icon></a>
+      <button type="button" class="btn btn--outline" data-sheet-close>Réessayer</button>
     </div>`,
 };
 
@@ -422,7 +429,7 @@ function initContact() {
 
   $$("[data-sheet]").forEach(b => b.addEventListener("click", () => openSheet(b.dataset.sheet)));
 
-  form.addEventListener("submit", e => {
+  form.addEventListener("submit", async e => {
     e.preventDefault();
     let ok = true;
     $$(".field", form).forEach(f => {
@@ -433,16 +440,42 @@ function initContact() {
     if (!ok) return;
 
     const d = new FormData(form);
+    if (d.get("_honey")) return; // champ piège rempli = robot
     const subject = `${d.get("type")} — ${d.get("name")}`;
     const body = `${d.get("message")}\n\n${d.get("name")} · ${d.get("email")}`;
     const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const first = String(d.get("name")).trim().split(" ")[0].replace(/[<>&"]/g, "");
     const btn = $(".brief__send", form);
     btn.classList.add("is-loading");
-    setTimeout(() => {
+    btn.disabled = true;
+
+    try {
+      // FormSubmit transfère le message par email ; le 1er envoi déclenche un email d'activation
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          Nom: d.get("name"),
+          Email: d.get("email"),
+          "Type de projet": d.get("type"),
+          Message: d.get("message"),
+          _subject: `Portfolio · ${subject}`,
+          _replyto: d.get("email"),
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || String(json.success) !== "true") throw new Error(json.message || res.status);
+      form.reset();
+      openSheet("success", { name: first });
+    } catch (err) {
+      console.error("Envoi du formulaire :", err);
+      openSheet("error", { mailto });
+    } finally {
       btn.classList.remove("is-loading");
-      const first = String(d.get("name")).trim().split(" ")[0].replace(/[<>&"]/g, "");
-      openSheet("success", { name: first, mailto });
-    }, 900);
+      btn.disabled = false;
+    }
   });
   $$(".field input, .field textarea", form).forEach(i => i.addEventListener("input", () => i.parentElement.classList.remove("is-error")));
 }

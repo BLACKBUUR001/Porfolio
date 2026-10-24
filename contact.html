@@ -85,6 +85,8 @@
           </div>
           <label class="field"><textarea name="message" rows="5" placeholder=" " required></textarea><span>Votre message</span></label>
 
+          <!-- Champ piège anti-spam : invisible pour les humains -->
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button type="submit" class="btn btn--primary brief__send">Envoyer le message <iconify-icon icon="ph:paper-plane-tilt"></iconify-icon></button>
         </form>
       </div>
