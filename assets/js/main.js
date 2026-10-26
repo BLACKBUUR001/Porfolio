@@ -5,15 +5,16 @@
 const Y = "#ffc61a", K = "#0a0a0a", D1 = "#161616", D2 = "#1d1d1d";
 
 const PROJECTS = [
-  { name: "MuridPro", type: "Mobile", desc: "Accompagnement spirituel", wide: true, img: "assets/img/muridpro.webp",
+  { name: "MuridPro", type: "Mobile", desc: "Accompagnement spirituel", wide: true, img: "assets/img/muridpro.jpg",
     url: "https://www.figma.com/proto/R1UovdnSla519lwIdwfO3e/Murid-pro-V4?node-id=1782-10949&viewport=639%2C300%2C0.12&t=2VgUJ8ey9BNZoPcZ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1782%3A10949&page-id=0%3A1" },
   { name: "Domtrust", type: "Mobile", desc: "Aide ménagère", img: "assets/img/domtrust.webp",
     url: "https://www.figma.com/proto/zTXUbU0cSBhNrevVGUsg6M/Maquette-UI?node-id=186-4307&viewport=750%2C487%2C0.43&t=M7ssMc5fImnTqHtf-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=76%3A3&page-id=8%3A4486" },
-  { name: "Gouvnum", type: "Web", desc: "Plateforme gouvernementale", wide: true, tone: Y, ac: K,
+  // hidden : absent des listes, visible seulement via projet.html?p=gouvnum&k=<key>
+  { name: "Gouvnum", type: "Web", desc: "Plateforme gouvernementale", wide: true, tone: Y, ac: K, hidden: true, key: "rJ3rP3Xm",
     url: "https://www.figma.com/proto/nFFNc3kwgvcmswoyT9gffY/GouvNum?node-id=132-2198&viewport=-260%2C-722%2C0.16&t=kgAGWjvBHDKI8oop-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=132%3A2198&page-id=0%3A1&show-proto-sidebar=1" },
-  { name: "SenDon", type: "Mobile", desc: "Don de sang · CNTS", tone: D2, ac: Y,
+  { name: "SenDon", type: "Mobile", desc: "Don de sang · CNTS", img: "assets/img/sendon.jpg",
     url: "https://www.figma.com/proto/yjgTqAqKJzrRcJX3rggype/SenDon?node-id=202-2230&viewport=138%2C438%2C0.09&t=nFpfcZ7NGf7VqjEJ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=201%3A1239&show-proto-sidebar=1&page-id=0%3A1" },
-  { name: "The Booker Hotels", type: "Web", desc: "Réservation d'hôtels", tone: D1, ac: Y,
+  { name: "The Booker Hotels", type: "Web", desc: "Réservation d'hôtels", wide: true, tone: D1, ac: Y,
     url: "https://www.figma.com/proto/fnKU4v23NoWQueM89710WM/Bookers-hotels?node-id=298-4011&t=jipBfZqCRMwEX1zf-1&scaling=scale-down&content-scaling=fixed&page-id=298%3A1546&starting-point-node-id=298%3A4011" },
   { name: "The Bookers App", type: "Mobile", desc: "Réservation d'hôtels", tone: Y, ac: K,
     url: "https://www.figma.com/proto/fnKU4v23NoWQueM89710WM/Bookers-hotels?node-id=1227-19254&t=Fn7mLQ2By0dQaYDP-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1227%3A19254" },
@@ -29,7 +30,7 @@ const PROJECTS = [
     url: "https://www.figma.com/proto/78zv7Fl8Er3K0SQAEYTvI2/Diass-industries?node-id=1-2&page-id=0%3A1&starting-point-node-id=1%3A2&t=ZoB3pdTOeJhtxGZW-1" },
   { name: "CPPS", type: "Web", desc: "Chaîne parlementaire", tone: Y, ac: K,
     url: "https://www.figma.com/proto/OnyCsM1lSm7VnOPRQtS9aQ/CPPS?node-id=251-4013&t=gTR1AgdKNASyCDNo-0&scaling=scale-down&content-scaling=fixed&page-id=251%3A3472&starting-point-node-id=251%3A4013" },
-  { name: "Landing Page NT", type: "Web", desc: "Landing page · Niane Technologie", tone: D2, ac: Y,
+  { name: "Landing Page NT", type: "Web", desc: "Landing page · Niane Technologie", wide: true, tone: D2, ac: Y,
     url: "https://www.figma.com/proto/qOpzn2iVEW7V1Htlt3fCn0/NT-landingpage?node-id=5-2&t=AjmOsrJrkoVzUDVB-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" },
 ];
 
@@ -419,7 +420,9 @@ const CASES = {
 
 const slugify = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 PROJECTS.forEach(p => { p.slug = slugify(p.name); p.case = CASES[p.name] || null; });
-const projectUrl = p => `projet.html?p=${p.slug}`;
+const projectUrl = p => `projet.html?p=${p.slug}${p.hidden ? `&k=${p.key}` : ""}`;
+// Projets affichés publiquement (grilles, compteurs, bandes, « projet suivant »)
+const LISTED = PROJECTS.filter(p => !p.hidden);
 
 const PAGES = [
   ["index.html", "Accueil", "accueil"],
@@ -529,7 +532,7 @@ function renderLayout() {
 /* ---------- Covers ---------- */
 // Capture de l'écran d'accueil du prototype Figma, dans un cadre navigateur ou téléphone
 function mockCover(p) {
-  const shot = `<img class="mock__shot" src="assets/img/proto/${p.slug}.png" alt="Écran d'accueil du prototype ${p.name}" loading="lazy">`;
+  const shot = `<img class="mock__shot" src="assets/img/proto/${p.slug}.jpg" alt="Écran d'accueil du prototype ${p.name}" loading="lazy">`;
   if (p.type === "Mobile") return `<div class="mock mock--mobile">${shot}</div>`;
   return `<div class="mock mock--web">
     <div class="mock__bar"><i></i><i></i><i></i></div>
@@ -554,11 +557,11 @@ function projectCard(p, i) {
 function renderProjects() {
   const grid = $("#projects");
   if (!grid) return;
-  const limit = +grid.dataset.limit || PROJECTS.length;
-  grid.innerHTML = PROJECTS.slice(0, limit).map(projectCard).join("");
+  const limit = +grid.dataset.limit || LISTED.length;
+  grid.innerHTML = LISTED.slice(0, limit).map(projectCard).join("");
 
-  const counts = { all: PROJECTS.length, Web: 0, Mobile: 0 };
-  PROJECTS.forEach(p => counts[p.type]++);
+  const counts = { all: LISTED.length, Web: 0, Mobile: 0 };
+  LISTED.forEach(p => counts[p.type]++);
   $$(".filter").forEach(b => { const s = $("sup", b); if (s) s.textContent = counts[b.dataset.filter]; });
 }
 
@@ -567,7 +570,8 @@ function renderCase() {
   const root = $("#case");
   if (!root) return;
   const slug = new URLSearchParams(location.search).get("p");
-  const i = PROJECTS.findIndex(p => p.slug === slug);
+  const params = new URLSearchParams(location.search);
+  const i = PROJECTS.findIndex(p => p.slug === slug && (!p.hidden || params.get("k") === p.key));
   if (i < 0) {
     root.innerHTML = `<section class="page-hero"><div class="container">
       <h1 class="page-hero__title">Projet <span>introuvable.</span></h1>
@@ -576,9 +580,11 @@ function renderCase() {
     </div></section>`;
     return;
   }
-  const p = PROJECTS[i], c = p.case, next = PROJECTS[(i + 1) % PROJECTS.length];
+  const p = PROJECTS[i], c = p.case, next = LISTED[(LISTED.indexOf(p) + 1) % LISTED.length];
   const icon = p.type === "Mobile" ? "ph:device-mobile" : "ph:monitor";
   document.title = `${p.name} — Étude de cas · Cheikh Ahmadou Fall`;
+  // Projet privé : demande aux moteurs de recherche de ne pas l'indexer
+  if (p.hidden) document.head.insertAdjacentHTML("beforeend", `<meta name="robots" content="noindex, nofollow">`);
 
   // Numérotation des sections présentes uniquement
   let n = 0;
@@ -668,7 +674,7 @@ function renderCase() {
         <div class="case-proto${p.type === "Mobile" ? " case-proto--mobile" : ""} reveal" id="caseProto">
           <button type="button" class="case-proto__load">
             <!-- Capture du prototype en aperçu, sous le bouton de lecture -->
-            <img class="case-proto__poster" src="${p.img || `assets/img/proto/${p.slug}.png`}" alt="" loading="lazy">
+            <img class="case-proto__poster" src="${p.img || `assets/img/proto/${p.slug}.jpg`}" alt="" loading="lazy">
             <span class="case-proto__cta">
               <span class="case-proto__play"><iconify-icon icon="ph:play-fill"></iconify-icon></span>
               Charger le prototype interactif
@@ -696,8 +702,8 @@ function renderCase() {
 /* ---------- Bandes de projets (page À propos) ---------- */
 function renderReels() {
   $$("[data-reel]").forEach(row => {
-    const half = Math.ceil(PROJECTS.length / 2);
-    const list = row.dataset.reel === "0" ? PROJECTS.slice(0, half) : PROJECTS.slice(half);
+    const half = Math.ceil(LISTED.length / 2);
+    const list = row.dataset.reel === "0" ? LISTED.slice(0, half) : LISTED.slice(half);
     const items = list.map((p, i) => `
       <span class="reel__item${i % 2 ? " reel__item--outline" : ""}">${p.name}<small>${p.type}</small></span>
       <iconify-icon class="reel__sep" icon="ph:asterisk-bold"></iconify-icon>`).join("");

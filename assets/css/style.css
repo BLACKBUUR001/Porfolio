@@ -368,9 +368,10 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
   background: var(--tone, var(--surface-2));
   display: grid; place-items: center;
 }
-.project--wide .project__cover { aspect-ratio: auto; flex: 1; min-height: 0; }
+/* contain: size → la carte large prend la hauteur de sa voisine, sans être étirée par la taille de sa capture */
+.project--wide .project__cover { aspect-ratio: auto; flex: 1; min-height: 0; contain: size; }
 .project__cover > img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
-.project--wide .project__cover > img { position: absolute; inset: 0; object-position: center 30%; }
+.project--wide .project__cover > img { position: absolute; inset: 0; object-position: center 40%; }
 .project:hover .project__cover > img, .project:hover .mock { transform: scale(1.04); }
 .project__play {
   position: absolute; right: 16px; bottom: 16px;
@@ -1118,7 +1119,7 @@ html.intro, html.pt-in { overflow: hidden; }
   .rstep:nth-child(n) .rstep__card { grid-column: 2; justify-self: stretch; max-width: none; }
   .projects { grid-template-columns: repeat(2, 1fr); }
   .project--wide { grid-column: auto; }
-  .project--wide .project__cover { aspect-ratio: 4 / 3; flex: none; }
+  .project--wide .project__cover { aspect-ratio: 4 / 3; flex: none; contain: none; }
   .project--wide .mock--web { width: 78%; height: auto; }
   .services-grid--3 { grid-template-columns: repeat(2, 1fr); }
   .about, .reach { grid-template-columns: 1fr; gap: 56px; }
